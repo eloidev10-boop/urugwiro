@@ -1,18 +1,4 @@
-
 User-agent: *
 Allow: /
 
-# If you later disallow any paths, add them below:
-# Disallow: /private/
-
-# Sitemap location (must match your domain)
-
-User-agent: *
-Allow: /
-
-# If you later disallow any paths, add them below:
-# Disallow: /private/
-
-# Sitemap location (must match your domain)
 Sitemap: https://peacelp.netlify.app/sitemap.xml
-
