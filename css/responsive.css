@@ -1,0 +1,667 @@
+/* =========================================================
+   PLP — RESPONSIVE DESIGN
+   Peace & Love Proclaimers
+   ========================================================= */
+
+
+/* =========================================================
+   TABLETS / SMALL LAPTOPS
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .container {
+        width: min(
+            calc(100% - 50px),
+            var(--container)
+        );
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .program-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .story-grid {
+        gap: 50px;
+    }
+
+    .contact-grid {
+        gap: 60px;
+    }
+
+    .footer-top {
+        gap: 35px;
+    }
+}
+
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .section,
+    .section-dark {
+        padding: 90px 0;
+    }
+
+
+    /* -------------------------
+       NAVIGATION
+       ------------------------- */
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+
+        position: fixed;
+
+        top: 82px;
+        left: 20px;
+        right: 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 15px;
+
+        border:
+            1px solid
+            rgba(255,255,255,.12);
+
+        border-radius: 18px;
+
+        background:
+            rgba(16,42,67,.97);
+
+        backdrop-filter:
+            blur(20px);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.2);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-15px);
+
+        transition:
+            opacity .3s ease,
+            visibility .3s ease,
+            transform .3s ease;
+    }
+
+    .nav-links.open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .nav-link {
+
+        width: 100%;
+
+        padding: 14px 10px;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+
+    /* -------------------------
+       HERO
+       ------------------------- */
+
+    .hero-title {
+
+        max-width: 700px;
+
+        font-size:
+            clamp(
+                52px,
+                9vw,
+                82px
+            );
+    }
+
+    .hero-bottom {
+
+        bottom: 25px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+
+    /* -------------------------
+       SECTION HEADERS
+       ------------------------- */
+
+    .statement-grid,
+    .section-header,
+    .impact-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    /* -------------------------
+       STORY
+       ------------------------- */
+
+    .story-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .story-image {
+
+        min-height: 500px;
+    }
+
+    .story-image img {
+
+        min-height: 500px;
+    }
+
+    .story-content {
+
+        max-width: 700px;
+    }
+
+
+    /* -------------------------
+       IMPACT
+       ------------------------- */
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .stat-card {
+
+        border-bottom:
+            1px solid
+            var(--border-white);
+    }
+
+
+    /* -------------------------
+       GALLERY
+       ------------------------- */
+
+    .gallery-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows:
+            300px
+            300px
+            300px;
+    }
+
+    .gallery-large {
+
+        grid-row:
+            span 2;
+    }
+
+    .gallery-wide {
+
+        grid-column:
+            span 2;
+    }
+
+
+    /* -------------------------
+       CONTACT
+       ------------------------- */
+
+    .contact-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    .footer-top {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+
+        width:
+            calc(100% - 36px);
+    }
+
+    .section,
+    .section-dark {
+
+        padding:
+            75px 0;
+    }
+
+
+    /* -------------------------
+       HEADER
+       ------------------------- */
+
+    .navbar {
+
+        min-height: 75px;
+    }
+
+    .header.scrolled .navbar {
+
+        min-height: 65px;
+    }
+
+    .nav-links {
+
+        top: 75px;
+    }
+
+    .logo {
+
+        font-size: 16px;
+
+        letter-spacing:
+            .08em;
+    }
+
+
+    /* -------------------------
+       HERO
+       ------------------------- */
+
+    .hero {
+
+        min-height:
+            750px;
+    }
+
+    .hero-content {
+
+        padding-top:
+            70px;
+    }
+
+    .hero-title {
+
+        font-size:
+            clamp(
+                48px,
+                14vw,
+                68px
+            );
+
+        line-height: 1;
+    }
+
+    .hero-description {
+
+        font-size: 14px;
+
+        margin-top:
+            25px;
+    }
+
+    .hero-actions {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        margin-top:
+            30px;
+    }
+
+    .button {
+
+        min-height:
+            50px;
+
+        padding-inline:
+            20px;
+    }
+
+    .hero-bottom {
+
+        width:
+            calc(100% - 36px);
+
+        bottom:
+            20px;
+    }
+
+    .hero-location {
+
+        display: none;
+    }
+
+    .slider-controls {
+
+        width: 100%;
+
+        justify-content:
+            space-between;
+    }
+
+
+    /* -------------------------
+       TYPOGRAPHY
+       ------------------------- */
+
+    .large-heading {
+
+        font-size:
+            42px;
+    }
+
+    .section-title {
+
+        font-size:
+            45px;
+    }
+
+    .story-content h3 {
+
+        font-size:
+            42px;
+    }
+
+
+    /* -------------------------
+       STORY IMAGE
+       ------------------------- */
+
+    .story-image {
+
+        min-height:
+            420px;
+
+        border-radius:
+            22px;
+    }
+
+    .story-image img {
+
+        min-height:
+            420px;
+    }
+
+    .image-caption {
+
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+
+    /* -------------------------
+       IMPACT
+       ------------------------- */
+
+    .stats-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .stat-card {
+
+        padding:
+            35px 0;
+
+        border-right:
+            0;
+    }
+
+    .stat-card:first-child {
+
+        padding-left:
+            0;
+    }
+
+    .stat-number {
+
+        font-size:
+            65px;
+    }
+
+
+    /* -------------------------
+       PROGRAMS
+       ------------------------- */
+
+    .program-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .program-card {
+
+        min-height:
+            350px;
+    }
+
+
+    /* -------------------------
+       GALLERY
+       ------------------------- */
+
+    .gallery-grid {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+    }
+
+    .gallery-item,
+    .gallery-large,
+    .gallery-wide {
+
+        min-height:
+            300px;
+
+        height:
+            300px;
+    }
+
+
+    /* -------------------------
+       CTA
+       ------------------------- */
+
+    .cta-box {
+
+        min-height:
+            500px;
+
+        border-radius:
+            22px;
+    }
+
+    .cta-content h2 {
+
+        font-size:
+            48px;
+    }
+
+
+    /* -------------------------
+       CONTACT
+       ------------------------- */
+
+    .contact-form {
+
+        padding:
+            25px 20px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    .footer {
+
+        padding-top:
+            60px;
+    }
+
+    .footer-top {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+
+        padding-bottom:
+            50px;
+    }
+
+    .footer-bottom {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            15px;
+    }
+
+
+    /* -------------------------
+       MODAL
+       ------------------------- */
+
+    .modal {
+
+        padding:
+            18px;
+    }
+
+    .modal-content {
+
+        padding:
+            40px 25px;
+    }
+
+    .modal-content h2 {
+
+        font-size:
+            45px;
+    }
+
+
+    /* -------------------------
+       BACK TO TOP
+       ------------------------- */
+
+    .back-to-top {
+
+        right:
+            18px;
+
+        bottom:
+            18px;
+
+        width:
+            44px;
+
+        height:
+            44px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+
+        width:
+            calc(100% - 28px);
+    }
+
+    .hero-title {
+
+        font-size:
+            45px;
+    }
+
+    .section-title {
+
+        font-size:
+            40px;
+    }
+
+    .large-heading {
+
+        font-size:
+            38px;
+    }
+
+    .hero-actions .button {
+
+        width:
+            100%;
+    }
+}
