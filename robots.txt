@@ -1,4 +1,4 @@
- name=robots.txt
+
 User-agent: *
 Allow: /
 
