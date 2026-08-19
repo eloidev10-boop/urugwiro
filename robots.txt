@@ -6,7 +6,7 @@ Allow: /
 # Disallow: /private/
 
 # Sitemap location (must match your domain)
-Sitemap: name=robots.txt
+
 User-agent: *
 Allow: /
 
