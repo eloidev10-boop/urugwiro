@@ -47,3 +47,75 @@
         font-size: 26px;
     }
 }
+/*=====================================================
+  CURRENT LEADERSHIP — RESPONSIVE
+=====================================================*/
+
+@media (max-width: 900px) {
+
+    .committee-modal-content {
+        grid-template-columns: 1fr;
+
+        max-height: 92vh;
+    }
+
+    .committee-modal-image {
+        min-height: 320px;
+
+        max-height: 350px;
+    }
+
+    .committee-modal-body {
+        padding: 35px 28px;
+    }
+
+    .committee-modal-body h2 {
+        font-size: 34px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .committee-section {
+        padding: 80px 0;
+    }
+
+    .committee-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .committee-image {
+        height: 300px;
+    }
+
+    .committee-modal {
+        padding: 12px;
+    }
+
+    .committee-modal-content {
+        max-height: 95vh;
+
+        border-radius: 18px;
+    }
+
+    .committee-modal-image {
+        min-height: 280px;
+        max-height: 300px;
+    }
+
+    .committee-modal-body {
+        padding: 28px 22px;
+    }
+
+    .committee-modal-body h2 {
+        font-size: 30px;
+    }
+
+    .committee-close {
+        width: 40px;
+        height: 40px;
+
+        font-size: 26px;
+    }
+}
