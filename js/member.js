@@ -211,3 +211,23 @@ document.getElementById("eventModal")
 .classList.add("show");
 
 }
+const modal=document.getElementById("eventModal");
+
+document.getElementById("closeModal")
+
+.onclick=()=>{
+
+modal.classList.remove("show");
+
+};
+
+window.onclick=(e)=>{
+
+if(e.target===modal){
+
+modal.classList.remove("show");
+
+}
+
+};
+
