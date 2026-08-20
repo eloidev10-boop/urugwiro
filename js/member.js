@@ -575,3 +575,189 @@ function renderCurrentLeaders() {
 
 
 renderCurrentLeaders();
+/*=====================================================
+   CURRENT LEADER PROFILE
+=====================================================*/
+
+function showCommitteeLeader(id) {
+
+    const leader =
+        currentLeaders.find(
+            item => item.id === id
+        );
+
+    if (!leader) return;
+
+
+    const image =
+        document.getElementById(
+            "committeeModalImage"
+        );
+
+    const position =
+        document.getElementById(
+            "committeeModalPosition"
+        );
+
+    const name =
+        document.getElementById(
+            "committeeModalName"
+        );
+
+    const bio =
+        document.getElementById(
+            "committeeModalBio"
+        );
+
+    const area =
+        document.getElementById(
+            "committeeModalArea"
+        );
+
+    const responsibilities =
+        document.getElementById(
+            "committeeModalResponsibilities"
+        );
+
+
+    /* Image */
+
+    image.src = leader.image;
+
+    image.alt = leader.name;
+
+
+    /* Basic information */
+
+    position.textContent =
+        leader.position;
+
+    name.textContent =
+        leader.name;
+
+    bio.textContent =
+        leader.bio;
+
+    area.textContent =
+        leader.area;
+
+
+    /* Responsibilities */
+
+    responsibilities.innerHTML = "";
+
+
+    if (
+        Array.isArray(
+            leader.responsibilities
+        )
+    ) {
+
+        leader.responsibilities.forEach(
+            responsibility => {
+
+                const li =
+                    document.createElement("li");
+
+                li.textContent =
+                    responsibility;
+
+                responsibilities.appendChild(li);
+
+            }
+        );
+
+    }
+
+
+    /* Open modal */
+
+    const modal =
+        document.getElementById(
+            "committeeModal"
+        );
+
+    modal.classList.add("show");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+/*=====================================================
+   CURRENT LEADER MODAL CONTROLS
+=====================================================*/
+
+const committeeModal =
+    document.getElementById(
+        "committeeModal"
+    );
+
+const committeeClose =
+    document.getElementById(
+        "committeeClose"
+    );
+
+
+function closeCommitteeModal() {
+
+    if (!committeeModal) return;
+
+    committeeModal.classList.remove(
+        "show"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+if (committeeClose) {
+
+    committeeClose.addEventListener(
+        "click",
+        closeCommitteeModal
+    );
+
+}
+
+
+if (committeeModal) {
+
+    committeeModal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target ===
+                committeeModal
+            ) {
+
+                closeCommitteeModal();
+
+            }
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            committeeModal &&
+            committeeModal.classList.contains(
+                "show"
+            )
+        ) {
+
+            closeCommitteeModal();
+
+        }
+
+    }
+);
