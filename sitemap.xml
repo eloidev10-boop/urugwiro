@@ -8,8 +8,8 @@
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
     <image:image>
-      <image:loc>https://peacelp.netlify.app/images/hero-1.jpg</image:loc>
-      <image:caption>PLP Urugwiro community event</image:caption>
+      <image:loc>https://peacelp.netlify.app/images/hero-2.jpg</image:loc>
+      <image:caption>PLP Urugwiro school event</image:caption>
     </image:image>
   </url>
   <!-- If you add distinct pages later, add <url> entries here for each -->
