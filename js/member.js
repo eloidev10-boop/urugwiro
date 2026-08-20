@@ -511,3 +511,67 @@ document.addEventListener(
 
     }
 );
+/*=====================================================
+   CURRENT LEADERSHIP
+=====================================================*/
+
+const committeeContainer =
+    document.getElementById("committeeContainer");
+
+
+function renderCurrentLeaders() {
+
+    if (!committeeContainer) return;
+
+    committeeContainer.innerHTML = "";
+
+    currentLeaders.forEach(leader => {
+
+        committeeContainer.innerHTML += `
+
+            <article class="committee-card">
+
+                <div class="committee-image">
+
+                    <img
+                        src="${leader.image}"
+                        alt="${leader.name}"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="committee-card-body">
+
+                    <span class="committee-card-position">
+                        ${leader.position}
+                    </span>
+
+                    <h3>
+                        ${leader.name}
+                    </h3>
+
+                    <p>
+                        ${leader.area}
+                    </p>
+
+                    <button
+                        type="button"
+                        class="committee-btn"
+                        onclick="showCommitteeLeader(${leader.id})"
+                    >
+                        View Profile
+                    </button>
+
+                </div>
+
+            </article>
+
+        `;
+
+    });
+
+}
+
+
+renderCurrentLeaders();
