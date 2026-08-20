@@ -8,19 +8,19 @@ welcome:
 slides: [
 
 {
-image:"images/hero/hero1.jpg",
+image:"images/hero-3.jpg",
 title:"Peace",
 subtitle:"Living Together in Unity"
 },
 
 {
-image:"images/hero/hero2.jpg",
+image:"images/hero-2.jpg",
 title:"Leadership",
 subtitle:"Growing Responsible Leaders"
 },
 
 {
-image:"images/hero/hero3.jpg",
+image:"images/gallery-4.jpg",
 title:"Service",
 subtitle:"Serving God and Community"
 }
