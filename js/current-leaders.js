@@ -64,21 +64,21 @@ const currentLeaders = [
     {
         id: 3,
 
-        name: "Leader Name",
+        name: "HIRWA Eloi",
 
-        position: "Secretary",
+        position: "Event Coordinator",
 
-        image: "images/leaders/current-secretary.jpg",
+        image: "images/IMG_20260820_220526.jpg",
 
         bio:
-        "Write the biography of the current secretary here.",
+        "The Designer.",
 
         area:
-        "Administration and communication.",
+        "Event programming.",
 
         responsibilities: [
 
-            "Maintains official records",
+            "Maintains official events",
 
             "Prepares meeting minutes",
 
