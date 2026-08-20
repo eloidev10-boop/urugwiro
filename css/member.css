@@ -1369,3 +1369,470 @@ opacity:1;
 }
 
 }
+/*=====================================================
+  LEADERSHIP HISTORY
+=====================================================*/
+
+.history-section {
+    padding: 120px 0;
+    background: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background */
+
+.history-section::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.07);
+    top: -180px;
+    left: -180px;
+}
+
+.history-section::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(11, 44, 77, 0.05);
+    bottom: -160px;
+    right: -160px;
+}
+
+.history-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/*=====================================================
+  LEADERS GRID
+=====================================================*/
+
+.leaders-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 35px;
+}
+
+
+/*=====================================================
+  LEADER CARD
+=====================================================*/
+
+.leader-card {
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    position: relative;
+}
+
+.leader-card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 25px 60px rgba(11, 44, 77, 0.16);
+}
+
+
+/*=====================================================
+  LEADER IMAGE
+=====================================================*/
+
+.leader-image {
+    height: 330px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: #e9ecef;
+}
+
+.leader-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(11, 44, 77, 0.45),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+.leader-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.leader-card:hover .leader-image img {
+    transform: scale(1.07);
+}
+
+
+/*=====================================================
+  LEADER CONTENT
+=====================================================*/
+
+.leader-content {
+    padding: 28px;
+}
+
+.leader-period {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(212, 175, 55, 0.15);
+
+    color: #9b7b12;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.leader-content h3 {
+    color: var(--primary);
+
+    font-size: 27px;
+
+    margin-bottom: 5px;
+}
+
+.leader-position {
+    color: var(--gray);
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+/*=====================================================
+  LEADER BUTTON
+=====================================================*/
+
+.leader-btn {
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 14px 20px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.leader-btn:hover {
+    background: var(--secondary);
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/*=====================================================
+  LEADER MODAL
+=====================================================*/
+
+.leader-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    background:
+        rgba(4, 18, 32, 0.88);
+
+    backdrop-filter: blur(10px);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    overflow-y: auto;
+}
+
+.leader-modal.show {
+    display: flex;
+}
+
+
+/*=====================================================
+  MODAL CONTENT
+=====================================================*/
+
+.leader-modal-content {
+    width: 100%;
+
+    max-width: 1000px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    overflow: hidden;
+
+    animation:
+        leaderModalOpen 0.4s ease;
+}
+
+
+/*=====================================================
+  MODAL IMAGE
+=====================================================*/
+
+.leader-modal-image {
+    min-height: 600px;
+
+    background: var(--primary);
+}
+
+.leader-modal-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/*=====================================================
+  MODAL BODY
+=====================================================*/
+
+.leader-modal-body {
+    padding: 55px 45px;
+
+    overflow-y: auto;
+}
+
+.leader-years {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(212, 175, 55, 0.18);
+
+    color: #8d7010;
+
+    font-weight: 800;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.leader-modal-body h2 {
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+
+    color: var(--primary);
+}
+
+.leader-modal-body h4 {
+    color: var(--secondary);
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+}
+
+.leader-modal-body p {
+    color: var(--gray);
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+.leader-modal-body h3 {
+    font-size: 23px;
+
+    margin-bottom: 15px;
+}
+
+
+/*=====================================================
+  ACHIEVEMENTS
+=====================================================*/
+
+#leaderAchievements {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+#leaderAchievements li {
+    position: relative;
+
+    padding: 12px 15px 12px 35px;
+
+    margin-bottom: 10px;
+
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    color: var(--text);
+}
+
+#leaderAchievements li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 13px;
+
+    top: 11px;
+
+    color: var(--secondary);
+
+    font-weight: 900;
+}
+
+
+/*=====================================================
+  CLOSE BUTTON
+=====================================================*/
+
+.leader-close {
+    position: absolute;
+
+    top: 18px;
+
+    right: 20px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(11, 44, 77, 0.9);
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.leader-close:hover {
+    background: var(--secondary);
+
+    color: var(--primary);
+
+    transform: rotate(90deg);
+}
+
+
+/*=====================================================
+  MODAL ANIMATION
+=====================================================*/
+
+@keyframes leaderModalOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
