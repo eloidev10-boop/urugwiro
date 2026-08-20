@@ -302,74 +302,212 @@ renderLeaders();
 Show Leader
 --------------------------------------*/
 
-function showLeader(id){
+/*=========================================
+  SHOW LEADER DETAILS
+=========================================*/
 
-    const leader =
-    leaders.find(item=>item.id===id);
+function showLeader(id) {
 
-    if(!leader) return;
+    const leader = leaders.find(
+        item => item.id === id
+    );
+
+    if (!leader) return;
+
+
+    /*---------------------------------------
+      BASIC INFORMATION
+    ---------------------------------------*/
 
     document.getElementById("leaderImage").src =
-    leader.image;
+        leader.image;
+
+    document.getElementById("leaderImage").alt =
+        leader.name;
 
     document.getElementById("leaderName").textContent =
-    leader.name;
+        leader.name;
 
     document.getElementById("leaderYears").textContent =
-    leader.years;
+        leader.years;
 
     document.getElementById("leaderPosition").textContent =
-    leader.position;
+        leader.position;
 
     document.getElementById("leaderBiography").textContent =
-    leader.biography;
+        leader.biography;
 
-    const achievementList =
-    document.getElementById("leaderAchievements");
 
-    achievementList.innerHTML="";
+    /*---------------------------------------
+      VISION
+    ---------------------------------------*/
 
-    leader.achievements.forEach(item=>{
+    const vision =
+        document.getElementById("leaderVision");
 
-        achievementList.innerHTML +=
+    if (vision) {
 
-        `<li>${item}</li>`;
+        vision.textContent =
+            leader.vision || "No vision information available.";
 
-    });
+    }
+
+
+    /*---------------------------------------
+      ACHIEVEMENTS
+    ---------------------------------------*/
+
+    const achievements =
+        document.getElementById("leaderAchievements");
+
+    achievements.innerHTML = "";
+
+    if (
+        Array.isArray(leader.achievements) &&
+        leader.achievements.length > 0
+    ) {
+
+        leader.achievements.forEach(
+            achievement => {
+
+                const li =
+                    document.createElement("li");
+
+                li.textContent = achievement;
+
+                achievements.appendChild(li);
+
+            }
+        );
+
+    } else {
+
+        achievements.innerHTML =
+            "<li>No achievements recorded.</li>";
+
+    }
+
+
+    /*---------------------------------------
+      PROJECTS
+    ---------------------------------------*/
+
+    const projects =
+        document.getElementById("leaderProjects");
+
+    projects.innerHTML = "";
+
+    if (
+        Array.isArray(leader.projects) &&
+        leader.projects.length > 0
+    ) {
+
+        leader.projects.forEach(
+            project => {
+
+                const li =
+                    document.createElement("li");
+
+                li.textContent = project;
+
+                projects.appendChild(li);
+
+            }
+        );
+
+    } else {
+
+        projects.innerHTML =
+            "<li>No projects recorded.</li>";
+
+    }
+
+
+    /*---------------------------------------
+      OPEN MODAL
+    ---------------------------------------*/
 
     const modal =
-    document.getElementById("leaderModal");
+        document.getElementById("leaderModal");
 
-    modal.classList.add("show");
+    if (modal) {
+
+        modal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    }
 
 }
-
 /*-------------------------------------
 Close Leader Modal
 --------------------------------------*/
 
+/*=========================================
+  LEADER MODAL CONTROLS
+=========================================*/
+
 const leaderModal =
-document.getElementById("leaderModal");
+    document.getElementById("leaderModal");
 
 const leaderClose =
-document.querySelector(".leader-close");
+    document.querySelector(".leader-close");
 
-if(leaderClose){
 
-leaderClose.onclick = ()=>{
+function closeLeaderModal() {
 
-leaderModal.classList.remove("show");
+    if (!leaderModal) return;
 
-};
+    leaderModal.classList.remove("show");
 
-}
-
-window.addEventListener("click",(e)=>{
-
-if(e.target===leaderModal){
-
-leaderModal.classList.remove("show");
+    document.body.style.overflow = "";
 
 }
 
-});
+
+if (leaderClose) {
+
+    leaderClose.addEventListener(
+        "click",
+        closeLeaderModal
+    );
+
+}
+
+
+if (leaderModal) {
+
+    leaderModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target === leaderModal) {
+
+                closeLeaderModal();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ESC KEY */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape" &&
+            leaderModal &&
+            leaderModal.classList.contains("show")
+        ) {
+
+            closeLeaderModal();
+
+        }
+
+    }
+);
