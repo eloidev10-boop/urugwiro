@@ -156,25 +156,58 @@ Event Modal
 
 function showEvent(id){
 
-    const event =
-    events.find(item=>item.id===id);
+const event = events.find(e=>e.id===id);
 
-    if(!event) return;
+if(!event) return;
 
-    alert(
+document.getElementById("modalImage").src=event.image;
 
-`${event.title}
+document.getElementById("modalTitle").textContent=event.title;
 
-Date: ${event.date}
+document.getElementById("modalDate").textContent=event.date;
 
-Time: ${event.time}
+document.getElementById("modalDescription").textContent=event.description;
 
-Location: ${event.location}
+document.getElementById("modalLocation").textContent=event.location;
 
-Organizer: ${event.organizer}
+document.getElementById("modalTime").textContent=event.time;
 
-${event.description}`
+document.getElementById("modalOrganizer").textContent=event.organizer;
 
-);
+const gallery=document.getElementById("galleryContainer");
+
+gallery.innerHTML="";
+
+event.gallery.forEach(image=>{
+
+gallery.innerHTML+=`
+
+<img src="${image}" alt="Gallery">
+
+`;
+
+});
+
+const register=document.getElementById("registerContainer");
+
+register.innerHTML="";
+
+if(event.registration){
+
+register.innerHTML=`
+
+<a href="#" class="register-btn">
+
+Register Now
+
+</a>
+
+`;
+
+}
+
+document.getElementById("eventModal")
+
+.classList.add("show");
 
 }
