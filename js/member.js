@@ -2,7 +2,198 @@
 PLP MEMBER PORTAL
 member.js
 ======================================================*/
+/*=====================================================
+   MEMBER HERO SLIDER
+=====================================================*/
 
+const heroSlider =
+    document.getElementById("heroSlider");
+
+const heroTitle =
+    document.getElementById("heroTitle");
+
+const heroSubtitle =
+    document.getElementById("heroSubtitle");
+
+
+let currentHeroSlide = 0;
+
+let heroInterval = null;
+
+
+/*=====================================================
+   CREATE HERO SLIDES
+=====================================================*/
+
+function createHeroSlides() {
+
+    if (
+        !heroSlider ||
+        !heroData ||
+        !heroData.slides ||
+        heroData.slides.length === 0
+    ) {
+
+        console.error(
+            "Hero data or slides were not found."
+        );
+
+        return;
+    }
+
+
+    heroSlider.innerHTML = "";
+
+
+    heroData.slides.forEach(
+        (slide, index) => {
+
+            const slideElement =
+                document.createElement("div");
+
+
+            slideElement.className =
+                "hero-slide";
+
+
+            if (index === 0) {
+
+                slideElement.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            slideElement.style.backgroundImage =
+                `url("${slide.image}")`;
+
+
+            heroSlider.appendChild(
+                slideElement
+            );
+
+        }
+    );
+
+
+    updateHeroContent();
+
+}
+
+
+/*=====================================================
+   SHOW HERO SLIDE
+=====================================================*/
+
+function showHeroSlide(index) {
+
+    const slides =
+        document.querySelectorAll(
+            ".hero-slide"
+        );
+
+
+    if (!slides.length) return;
+
+
+    slides.forEach(slide => {
+
+        slide.classList.remove(
+            "active"
+        );
+
+    });
+
+
+    currentHeroSlide =
+        (index + slides.length) %
+        slides.length;
+
+
+    slides[currentHeroSlide]
+        .classList.add("active");
+
+
+    updateHeroContent();
+
+}
+
+
+/*=====================================================
+   UPDATE HERO TEXT
+=====================================================*/
+
+function updateHeroContent() {
+
+    if (
+        !heroData ||
+        !heroData.slides.length
+    ) {
+        return;
+    }
+
+
+    const currentSlide =
+        heroData.slides[
+            currentHeroSlide
+        ];
+
+
+    if (heroTitle) {
+
+        heroTitle.textContent =
+            currentSlide.title;
+
+    }
+
+
+    if (heroSubtitle) {
+
+        heroSubtitle.textContent =
+            currentSlide.subtitle;
+
+    }
+
+}
+
+
+/*=====================================================
+   AUTO SLIDER
+=====================================================*/
+
+function startHeroSlider() {
+
+    if (heroInterval) {
+
+        clearInterval(
+            heroInterval
+        );
+
+    }
+
+
+    heroInterval = setInterval(
+        () => {
+
+            showHeroSlide(
+                currentHeroSlide + 1
+            );
+
+        },
+        5000
+    );
+
+}
+
+
+/*=====================================================
+   INITIALIZE HERO
+=====================================================*/
+
+createHeroSlides();
+
+startHeroSlider();
 document.addEventListener("DOMContentLoaded", () => {
 
     renderEvents("upcoming");
@@ -774,3 +965,101 @@ if (footerYear) {
         new Date().getFullYear();
 
 }
+/*=====================================================
+   MOBILE NAVIGATION
+=====================================================*/
+
+const navToggle =
+    document.getElementById("navToggle");
+
+const navMenu =
+    document.getElementById("navMenu");
+
+
+if (navToggle && navMenu) {
+
+    navToggle.addEventListener(
+        "click",
+        () => {
+
+            const isOpen =
+                navMenu.classList.toggle(
+                    "active"
+                );
+
+            navToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+            navToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+        }
+    );
+
+
+    /* Close menu after selecting a section */
+
+    navMenu
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    navMenu.classList.remove(
+                        "active"
+                    );
+
+                    navToggle.classList.remove(
+                        "active"
+                    );
+
+                    navToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+}
+/*=====================================================
+   HEADER SCROLL EFFECT
+=====================================================*/
+
+const header =
+    document.querySelector(".header");
+
+
+function updateHeader() {
+
+    if (!header) return;
+
+    if (window.scrollY > 50) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateHeader
+);
+
+
+/* Check initial position */
+updateHeader();
