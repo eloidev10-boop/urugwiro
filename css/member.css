@@ -1888,3 +1888,473 @@ opacity:1;
 
     font-size: 11px;
 }
+/*=====================================================
+  CURRENT LEADERSHIP / COMMITTEE
+=====================================================*/
+
+.committee-section {
+    padding: 120px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.committee-section::before {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.06);
+
+    top: -200px;
+    right: -180px;
+
+    pointer-events: none;
+}
+
+.committee-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/*=====================================================
+  COMMITTEE GRID
+=====================================================*/
+
+.committee-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(270px, 1fr));
+
+    gap: 30px;
+}
+
+
+/*=====================================================
+  COMMITTEE CARD
+=====================================================*/
+
+.committee-card {
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 45px rgba(11, 44, 77, 0.08);
+
+    border: 1px solid rgba(11, 44, 77, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.committee-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 60px rgba(11, 44, 77, 0.15);
+}
+
+
+/*=====================================================
+  COMMITTEE IMAGE
+=====================================================*/
+
+.committee-image {
+    height: 320px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: #e9ecef;
+}
+
+.committee-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(11, 44, 77, 0.45),
+            transparent 50%
+        );
+
+    pointer-events: none;
+}
+
+.committee-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.committee-card:hover
+.committee-image img {
+    transform: scale(1.07);
+}
+
+
+/*=====================================================
+  CARD BODY
+=====================================================*/
+
+.committee-card-body {
+    padding: 28px;
+}
+
+.committee-card-position {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    background:
+        rgba(212, 175, 55, 0.15);
+
+    color: #927513;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 14px;
+}
+
+.committee-card-body h3 {
+    font-size: 27px;
+
+    color: var(--primary);
+
+    margin-bottom: 8px;
+}
+
+.committee-card-body p {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    min-height: 50px;
+
+    margin-bottom: 22px;
+}
+
+
+/*=====================================================
+  PROFILE BUTTON
+=====================================================*/
+
+.committee-btn {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.committee-btn:hover {
+    background: var(--secondary);
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/*=====================================================
+  CURRENT LEADER MODAL
+=====================================================*/
+
+.committee-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10001;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(4, 18, 32, 0.88);
+
+    backdrop-filter: blur(10px);
+
+    overflow-y: auto;
+}
+
+.committee-modal.show {
+    display: flex;
+}
+
+
+/*=====================================================
+  MODAL CONTENT
+=====================================================*/
+
+.committee-modal-content {
+    width: 100%;
+
+    max-width: 950px;
+
+    max-height: 90vh;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    display: grid;
+
+    grid-template-columns: 40% 60%;
+
+    position: relative;
+
+    animation:
+        committeeModalOpen 0.4s ease;
+}
+
+
+/*=====================================================
+  MODAL IMAGE
+=====================================================*/
+
+.committee-modal-image {
+    min-height: 580px;
+
+    background: var(--primary);
+}
+
+.committee-modal-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/*=====================================================
+  MODAL BODY
+=====================================================*/
+
+.committee-modal-body {
+    padding: 55px 45px;
+
+    overflow-y: auto;
+}
+
+.committee-position {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(212, 175, 55, 0.18);
+
+    color: #8d7010;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.committee-modal-body h2 {
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    color: var(--primary);
+
+    margin-bottom: 20px;
+}
+
+.committee-modal-body > p {
+    color: var(--gray);
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+/*=====================================================
+  DETAILS
+=====================================================*/
+
+.committee-detail {
+    margin-top: 28px;
+}
+
+.committee-detail h3 {
+    color: var(--primary);
+
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+.committee-detail p {
+    color: var(--gray);
+
+    line-height: 1.8;
+}
+
+
+/*=====================================================
+  RESPONSIBILITIES
+=====================================================*/
+
+#committeeModalResponsibilities {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+#committeeModalResponsibilities li {
+    position: relative;
+
+    padding: 12px 15px 12px 35px;
+
+    margin-bottom: 10px;
+
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    color: var(--text);
+}
+
+#committeeModalResponsibilities li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 13px;
+    top: 11px;
+
+    color: var(--secondary);
+
+    font-weight: 900;
+}
+
+
+/*=====================================================
+  CLOSE BUTTON
+=====================================================*/
+
+.committee-close {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(11, 44, 77, 0.9);
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.committee-close:hover {
+    background: var(--secondary);
+
+    color: var(--primary);
+
+    transform: rotate(90deg);
+}
+
+
+/*=====================================================
+  MODAL ANIMATION
+=====================================================*/
+
+@keyframes committeeModalOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
