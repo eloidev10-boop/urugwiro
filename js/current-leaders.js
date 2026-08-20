@@ -7,14 +7,14 @@ const currentLeaders = [
     {
         id: 1,
 
-        name: "Leader Name",
+        name: "NIYIGABA Josue",
 
-        position: "President",
+        position: "Coordinator",
 
         image: "images/leaders/current-president.jpg",
 
         bio:
-        "Write a short biography of the current president here. Explain their experience, service to PLP and current leadership role.",
+        "This Student is one most intellectual, hardworking..",
 
         area:
         "Overall PLP leadership and strategic direction.",
@@ -23,11 +23,8 @@ const currentLeaders = [
 
             "Provides overall leadership",
 
-            "Coordinates the leadership team",
+            "Coordinates the committee team"
 
-            "Represents PLP",
-
-            "Oversees major organizational activities"
 
         ]
 
@@ -37,9 +34,9 @@ const currentLeaders = [
     {
         id: 2,
 
-        name: "Leader Name",
+        name: "MUHIRE Kelly Evangelique",
 
-        position: "Vice President",
+        position: "Vice Coordinator",
 
         image: "images/leaders/current-vice-president.jpg",
 
@@ -47,11 +44,11 @@ const currentLeaders = [
         "Write the biography of the current vice president here.",
 
         area:
-        "Leadership coordination and member development.",
+        "Leadership vice coordination and member development.",
 
         responsibilities: [
 
-            "Supports the President",
+            "Supports the coordinator   ",
 
             "Coordinates assigned committees",
 
