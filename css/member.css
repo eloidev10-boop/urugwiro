@@ -692,4 +692,210 @@ animation-delay:.4s;
 animation-delay:.6s;
 
 }
+/*=====================================================
+ANNOUNCEMENTS
+======================================================*/
 
+.announcements-section{
+
+    padding:120px 0;
+
+    background:#F8F9FA;
+
+}
+
+.announcement-wrapper{
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    gap:45px;
+
+    align-items:start;
+
+}
+
+.announcement-info{
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.announcement-info span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    background:rgba(212,175,55,.15);
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+
+}
+
+.announcement-info h2{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.announcement-info p{
+
+    color:var(--gray);
+
+    font-size:17px;
+
+    line-height:1.9;
+
+}
+
+.announcement-list{
+
+    display:grid;
+
+    gap:25px;
+
+}
+
+.announcement-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+    border-left:6px solid var(--secondary);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.announcement-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.announcement-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.badge{
+
+    background:var(--secondary);
+
+    color:var(--primary);
+
+    padding:6px 16px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+.announcement-date{
+
+    color:var(--gray);
+
+    font-size:14px;
+
+}
+
+.announcement-card h3{
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+}
+
+.announcement-card p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+.read-more{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:25px;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.read-more:hover{
+
+    color:var(--secondary);
+
+}
+
+.pinned{
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:90px;
+
+    text-align:center;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:8px;
+
+    transform:rotate(45deg) translate(30px,-25px);
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    font-weight:700;
+
+}
