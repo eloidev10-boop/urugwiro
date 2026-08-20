@@ -6,7 +6,7 @@ EVENTS DATA
 const events = [
 
    {
-        id: 1,
+        id: 5,
 
         type: "past",
 
@@ -20,22 +20,22 @@ const events = [
 
         organizer: "PLP Urugwiro",
 
-        image: "images/events/event4.jpg",
+        image: "images/IMG-20260412-WA0189.jpg",
 
         description:
         "Members took time for remembering those who were killed in GENOCIDE OF TUSTI IN 1994.",
 
         gallery: [
-            "images/events/gallery/service1.jpg",
-            "images/events/gallery/service2.jpg",
-            "images/events/gallery/service3.jpg"
+            "images/hero-1.jpg",
+            "images/gallery-2.jpg",
+            "images/IMG-20260412-WA0197.jpg"
         ],
 
         registration: false
     },
 
        {
-        id: 2,
+        id: 6,
 
         type: "past",
 
@@ -49,15 +49,15 @@ const events = [
 
         organizer: "PLP Family",
 
-        image: "images/events/event5.jpg",
+        image: "images/hero-2.jpg",
 
         description:
         "A special PLP moment where we are skilled more about PLP.",
 
         gallery: [
-            "images/events/gallery/retreat1.jpg",
-            "images/events/gallery/retreat2.jpg",
-            "images/events/gallery/retreat3.jpg"
+            "images/gallery-4.jpg",
+            "images/hero-3.jpg",
+            "images/gallery-3.jpg"
         ],
 
         registration: false
