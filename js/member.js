@@ -230,4 +230,146 @@ modal.classList.remove("show");
 }
 
 };
+/*=====================================================
+LEADERSHIP HISTORY
+======================================================*/
 
+const leadersContainer = document.getElementById("leadersContainer");
+
+/*-------------------------------------
+Render Leaders
+--------------------------------------*/
+
+function renderLeaders() {
+
+    if (!leadersContainer) return;
+
+    leadersContainer.innerHTML = "";
+
+    leaders.forEach(leader => {
+
+        leadersContainer.innerHTML += `
+
+        <div class="leader-card">
+
+            <div class="leader-image">
+
+                <img src="${leader.image}" alt="${leader.name}">
+
+            </div>
+
+            <div class="leader-content">
+
+                <span class="leader-period">
+
+                    ${leader.years}
+
+                </span>
+
+                <h3>
+
+                    ${leader.name}
+
+                </h3>
+
+                <p class="leader-position">
+
+                    ${leader.position}
+
+                </p>
+
+                <button
+                    class="leader-btn"
+                    onclick="showLeader(${leader.id})">
+
+                    View Biography
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+renderLeaders();
+
+/*-------------------------------------
+Show Leader
+--------------------------------------*/
+
+function showLeader(id){
+
+    const leader =
+    leaders.find(item=>item.id===id);
+
+    if(!leader) return;
+
+    document.getElementById("leaderImage").src =
+    leader.image;
+
+    document.getElementById("leaderName").textContent =
+    leader.name;
+
+    document.getElementById("leaderYears").textContent =
+    leader.years;
+
+    document.getElementById("leaderPosition").textContent =
+    leader.position;
+
+    document.getElementById("leaderBiography").textContent =
+    leader.biography;
+
+    const achievementList =
+    document.getElementById("leaderAchievements");
+
+    achievementList.innerHTML="";
+
+    leader.achievements.forEach(item=>{
+
+        achievementList.innerHTML +=
+
+        `<li>${item}</li>`;
+
+    });
+
+    const modal =
+    document.getElementById("leaderModal");
+
+    modal.classList.add("show");
+
+}
+
+/*-------------------------------------
+Close Leader Modal
+--------------------------------------*/
+
+const leaderModal =
+document.getElementById("leaderModal");
+
+const leaderClose =
+document.querySelector(".leader-close");
+
+if(leaderClose){
+
+leaderClose.onclick = ()=>{
+
+leaderModal.classList.remove("show");
+
+};
+
+}
+
+window.addEventListener("click",(e)=>{
+
+if(e.target===leaderModal){
+
+leaderModal.classList.remove("show");
+
+}
+
+});
