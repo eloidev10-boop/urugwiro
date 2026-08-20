@@ -8,39 +8,39 @@ const leaders = [
 {
     id:1,
 
-    name:"Leader Name",
+    name:"TUYISHIME Elie Yves",
 
     position:"Founder",
 
-    years:"2012 - 2014",
+    years:"2025 - 2026",
 
-    image:"images/leaders/leader1.jpg",
+    image:"images/hero-3.jpg",
 
     biography:
-    "Write the biography of this leader here. Explain who he/she is, how they joined PLP and their leadership journey.",
+    "Elie Yves is the founder of PLP Urugwiro.",
 
     vision:
     "To establish a strong foundation of Peace & Love Proclaimers.",
 
     achievements:[
 
-        "Founded Peace & Love Proclaimers.",
+        "Founded Peace & Love Proclaimers Urugwiro.",
 
         "Established the first leadership committee.",
 
-        "Organized the first PLP retreat.",
+        "Organized the first PLP Event."
 
-        "Created the vision and mission."
+       
 
     ],
 
     projects:[
 
-        "Community Evangelization",
+        "Kwibuka Event",
 
-        "Leadership Formation",
+        "Skill Up"
 
-        "Youth Ministry"
+        
 
     ]
 
