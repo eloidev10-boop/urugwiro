@@ -125,7 +125,7 @@ const currentLeaders = [
 
         position: "Treasure",
 
-        image: "images/IMG-20260706-WA0007.jpg",
+        image: "images/gallery-1.jpg",
 
         bio:
         "MOney broh.",
