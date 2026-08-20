@@ -121,27 +121,25 @@ const currentLeaders = [
     {
         id: 5,
 
-        name: "Leader Name",
+        name: "Kenny Fred",
 
-        position: "Youth Coordinator",
+        position: "Treasure",
 
-        image: "images/leaders/current-youth.jpg",
+        image: "images/IMG_20260820_220624.jpg",
 
         bio:
-        "Write the biography of the current youth coordinator here.",
+        "MOney broh.",
 
         area:
-        "Youth development and formation.",
+        "Financial .",
 
         responsibilities: [
 
-            "Coordinates youth activities",
+            "Coordinates Financial currencies",
 
-            "Organizes youth formation",
+            "Organizes money formation"
 
-            "Encourages youth participation",
-
-            "Supports youth leadership development"
+            
 
         ]
 
