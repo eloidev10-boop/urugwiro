@@ -11,7 +11,7 @@ const currentLeaders = [
 
         position: "Coordinator",
 
-        image: "images/leaders/current-president.jpg",
+        image: "images/IMG_20260706_205251_126.jpg",
 
         bio:
         "This Student is one most intellectual, hardworking..",
