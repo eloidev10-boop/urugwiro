@@ -38,7 +38,7 @@ const currentLeaders = [
 
         position: "Vice Coordinator",
 
-        image: "images/leaders/current-vice-president.jpg",
+        image: "images/IMG_20260820_220341.jpg",
 
         bio:
         "Write the biography of the current vice president here.",
