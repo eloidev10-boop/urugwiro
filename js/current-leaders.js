@@ -94,27 +94,24 @@ const currentLeaders = [
     {
         id: 4,
 
-        name: "Leader Name",
+        name: "KARABONA Daniella",
 
-        position: "Treasurer",
+        position: "Coordinatrice",
 
-        image: "images/leaders/current-treasurer.jpg",
+        image: "images/IMG_20260820_220624.jpg",
 
         bio:
-        "Write the biography of the current treasurer here.",
+        "Best Grand-Mother ever.",
 
         area:
-        "Financial administration.",
+        "Member carement.",
 
         responsibilities: [
 
-            "Maintains financial records",
+            "Cares for the family",
+            "good mother"
 
-            "Prepares financial reports",
-
-            "Coordinates approved financial activities",
-
-            "Supports financial accountability"
+            
 
         ]
 
