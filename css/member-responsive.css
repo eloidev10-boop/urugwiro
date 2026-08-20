@@ -1,0 +1,49 @@
+/*=====================================================
+  LEADERSHIP — MOBILE
+=====================================================*/
+
+@media (max-width: 768px) {
+
+    .history-section {
+        padding: 80px 0;
+    }
+
+    .leaders-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .leader-image {
+        height: 300px;
+    }
+
+    .leader-modal {
+        padding: 15px;
+    }
+
+    .leader-modal-content {
+        grid-template-columns: 1fr;
+
+        max-height: 95vh;
+    }
+
+    .leader-modal-image {
+        min-height: 320px;
+
+        max-height: 350px;
+    }
+
+    .leader-modal-body {
+        padding: 30px 25px;
+    }
+
+    .leader-modal-body h2 {
+        font-size: 32px;
+    }
+
+    .leader-close {
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+    }
+}
