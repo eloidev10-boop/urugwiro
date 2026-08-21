@@ -1063,3 +1063,11 @@ window.addEventListener(
 
 /* Check initial position */
 updateHeader();
+
+const openContractBtn = document.getElementById("openContract");
+
+if (openContractBtn) {
+    openContractBtn.addEventListener("click", () => {
+        window.open("PLP CONTRACT.pdf", "_blank");
+    });
+}
