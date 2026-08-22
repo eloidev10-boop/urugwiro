@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://saintjosephplp.netlify.app/sitemap.xml
+Sitemap: https://urugwiroplp.netlify.app/sitemap.xml
